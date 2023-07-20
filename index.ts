@@ -1,10 +1,11 @@
 import "dotenv/config";
-import router from "./router";
-import errorMiddleware from "./middleware/error-middleware";
+import router from "./src/router";
+
 import * as express from "express";
 import * as cors from "cors";
 import * as mongoose from "mongoose";
 import * as cookieParser from "cookie-parser";
+import errorMiddleware from "./src/middleware/error-middleware";
 
 const app = express();
 app.use(express.json());

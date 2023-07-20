@@ -3,6 +3,7 @@ import UserController from "../controller/user-controller";
 import { body } from "express-validator";
 import { authMiddleware } from "../middleware/auth-middleware";
 
+
 const router = Router();
 
 router.post(
