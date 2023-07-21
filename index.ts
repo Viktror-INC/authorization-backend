@@ -1,14 +1,13 @@
 import "dotenv/config";
-import router from "./src/router";
 
-import * as cors from "cors";
-import * as mongoose from "mongoose";
-import * as cookieParser from "cookie-parser";
-import errorMiddleware from "./src/middleware/error-middleware";
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
 
-const app = require('express')();
-// app.use(express.json());
-// app.use(cookieParser());
+const app = express();
+app.use(express.json());
+app.use(cookieParser());
 // app.use(
 //   cors({
 //     credentials: true,
