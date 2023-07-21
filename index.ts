@@ -19,7 +19,7 @@ app.use(
 app.use("/api", router);
 app.use(errorMiddleware);
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || "";
 
 // respond with "hello world" when a GET request is made to the homepage
 
@@ -37,4 +37,4 @@ app.listen(port, function () {
   console.log("Example app listening on port " + port + "!");
 });
 
-export default app
+export default app;
