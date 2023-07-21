@@ -16,6 +16,9 @@ app.use(
     origin: process.env.CLIENT_URL,
   })
 );
+app.get("/", (request, response) => {
+  response.json("Hello world");
+});
 app.use("/api", router);
 app.use(errorMiddleware);
 
