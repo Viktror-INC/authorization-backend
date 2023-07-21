@@ -1,4 +1,6 @@
 import "dotenv/config";
+import router from "./src/router";
+import errorMiddleware from "./src/middleware/error-middleware";
 
 const express = require("express");
 const cors = require("cors");
@@ -17,8 +19,8 @@ app.use(
 app.get("/", (request, response) => {
   response.json("Hello world");
 });
-// app.use("/api", router);
-// app.use(errorMiddleware);
+app.use("/api", router);
+app.use(errorMiddleware);
 
 const port = process.env.PORT || 5000;
 
