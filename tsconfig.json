@@ -4,5 +4,6 @@
   
       // rest options remain same
     },
-    "include": ["src/**/*", "./api/*.ts"]
+    "include": ["src/**/*", "./api/*.ts"],
+    
   }

@@ -1,7 +1,7 @@
 import "dotenv/config";
 import router from "./src/router";
 
-const express = require("express");
+import * as express from "express";
 import * as cors from "cors";
 import * as mongoose from "mongoose";
 import * as cookieParser from "cookie-parser";
