@@ -8,14 +8,14 @@ import * as cookieParser from "cookie-parser";
 import errorMiddleware from "./src/middleware/error-middleware";
 
 const app = express();
-app.use(express.json());
-app.use(cookieParser());
-app.use(
-  cors({
-    credentials: true,
-    origin: process.env.CLIENT_URL,
-  })
-);
+// app.use(express.json());
+// app.use(cookieParser());
+// app.use(
+//   cors({
+//     credentials: true,
+//     origin: process.env.CLIENT_URL,
+//   })
+// );
 app.get("/", (request, response) => {
   response.json("Hello world");
 });
