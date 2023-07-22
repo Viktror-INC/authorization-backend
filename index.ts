@@ -8,18 +8,14 @@ const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 
+const corsConfig = {
+  origin: true,
+  credentials: true,
+};
+
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-
-app.use(
-  session({
-    name: "app.sid",
-    secret: "1234567890QWERTY",
-    resave: true,
-    saveUninitialized: true,
-  })
-);
 
 app.use(
   cors({
@@ -27,6 +23,8 @@ app.use(
     origin: [process.env.CLIENT_URL, process.env.PROD_URL],
   })
 );
+
+app.options('*', cors(corsConfig));
 
 app.get("/", (request, response) => {
   response.json("Hello world");
