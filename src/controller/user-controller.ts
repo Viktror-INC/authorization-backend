@@ -24,9 +24,8 @@ const setCookies = (tokens: Tokens[], response) => {
     response.cookie(token.key, token.value, {
       maxAge: token.date,
       httpOnly: token.httpOnly || true,
-      sameSite: 'none',
-      domain: 'localhost',
-      secure: true,
+      sameSite: "none",
+      domain: "localhost",
     });
   });
 };
