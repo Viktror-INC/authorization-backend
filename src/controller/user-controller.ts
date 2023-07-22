@@ -25,7 +25,7 @@ const setCookies = (tokens: Tokens[], response) => {
       maxAge: token.date,
       httpOnly: token.httpOnly || true,
       sameSite: 'none',
-      domain: 'http://localhost:3000'
+      domain: 'https://authorization-backend-six.vercel.app/'
     });
   });
 };
