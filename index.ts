@@ -14,10 +14,10 @@ app.use(cookieParser());
 
 app.use(
   session({
-    secret: "yoursecret",
-    cookie: {
-      sameSite: "none",
-    },
+    name: "app.sid",
+    secret: "1234567890QWERTY",
+    resave: true,
+    saveUninitialized: true,
   })
 );
 
@@ -27,17 +27,6 @@ app.use(
     origin: [process.env.CLIENT_URL, process.env.PROD_URL],
   })
 );
-
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Credentials", true);
-  res.header("Access-Control-Allow-Origin", req.headers.origin);
-  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept"
-  );
-  next();
-});
 
 app.get("/", (request, response) => {
   response.json("Hello world");

@@ -25,7 +25,7 @@ const setCookies = (tokens: Tokens[], response) => {
       maxAge: token.date,
       httpOnly: token.httpOnly || true,
       sameSite: 'none',
-      domain: '.vercel.app',
+      domain: 'localhost',
       secure: true,
     });
   });
