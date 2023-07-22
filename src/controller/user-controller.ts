@@ -24,6 +24,7 @@ const setCookies = (tokens: Tokens[], response) => {
     response.cookie(token.key, token.value, {
       maxAge: token.date,
       httpOnly: token.httpOnly || true,
+      domain: 'http://localhost:3000/'
     });
   });
 };
@@ -56,7 +57,6 @@ class UserController {
 
       const { email, password } = await request.body;
       const userData = await UserService.registrationService(email, password);
-
 
       //set cookie from server
       setCookies(tokens(userData), response);
