@@ -1,6 +1,5 @@
 import * as jwt from "jsonwebtoken";
 import tokenModel from "../models/token-model";
-import ApiError from "../exceprions/api-error";
 import UserDto from "../dtos/user-dto";
 
 class TokenService {

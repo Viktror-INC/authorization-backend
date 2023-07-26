@@ -23,9 +23,8 @@ const setCookies = (tokens: Tokens[], response) => {
   tokens.forEach((token) => {
     response.cookie(token.key, token.value, {
       maxAge: token.date,
-      // httpOnly: token.httpOnly || true,
-      sameSite: "none",
-      secure: true,
+      httpOnly: token.httpOnly || true,
+      sameSite: 'lax',
     });
   });
 };

@@ -17,14 +17,14 @@ export const authMiddleware = (
       return next(ApiError.NotAuthorizeErr());
     }
 
-    const userData =  tokenService.validateAccessToken(accessToken);
+    const userData = tokenService.validateAccessToken(accessToken);
     if (!userData) {
       return next(ApiError.NotAuthorizeErr());
     }
 
     // add to request new field
     request.user = userData as typeof UserModel;
-    next()
+    next();
   } catch (error) {
     return next(ApiError.NotAuthorizeErr());
   }
