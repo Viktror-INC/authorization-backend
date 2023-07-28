@@ -24,7 +24,8 @@ const setCookies = (tokens: Tokens[], response) => {
     response.cookie(token.key, token.value, {
       maxAge: token.date,
       httpOnly: token.httpOnly || true,
-      sameSite: 'lax',
+      sameSite: "none",
+      secure: true,
     });
   });
 };
@@ -107,6 +108,8 @@ class UserController {
   async refresh(request: IRequest, response: Response, next: NextFunction) {
     try {
       const { refreshToken } = request.cookies;
+
+      console.log("refreshToken>>>", refreshToken);
 
       const userData = await UserService.refreshService(refreshToken);
 

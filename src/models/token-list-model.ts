@@ -1,15 +1,9 @@
 import { Schema, model } from "mongoose";
 
-const SubTokenListSchema = new Schema({
-    name: String,
-    age: Number,
-  });
-  
-  const TokenListSchema = new Schema({
-    list: [SubTokenListSchema],
-  })
+const CoinListSchema = new Schema({
+  list: [],
+});
 
+const CoinListModel = model("CoinList", CoinListSchema);
 
-const TokenListModel = model("TokenList", TokenListSchema);
-
-export default TokenListModel;
+export default CoinListModel;

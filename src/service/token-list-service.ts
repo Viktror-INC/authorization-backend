@@ -1,10 +1,11 @@
-import TokenListModel from "../models/token-list-model"
+import CoinListModel from "../models/token-list-model";
 
-class TokenListService {
-    async getTokenListService() {
-         const tokenList = TokenListModel.find()
-        return tokenList
-     }
+class CoinListService {
+  async getCoinListService() {
+    const coinList = CoinListModel.find();
+    console.log("coinList", coinList);
+    return coinList;
+  }
 }
 
-export default new TokenListService()
+export default new CoinListService();
